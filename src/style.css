@@ -6,11 +6,12 @@ h1 {
   color: #347474;
   font-weight: 600;
   font-size: 24px;
+  margin-bottom: 0.1rem;
 }
 
 h2 {
   color: #347474;
-  font-size: 22px;
+  font-size: 42px;
 }
 
 h3 {
@@ -21,7 +22,8 @@ h3 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 10px;
+  margin-bottom: 0;
 }
 
 .app {
@@ -33,9 +35,10 @@ p {
   padding: 40px;
 }
 
-.degrees {
-  font-size: 20px;
-  vertical-align: top;
+.units {
+  position: relative;
+  font-size: 12px;
+  top: -18px;
 }
 .four-columns {
   margin-top: 20px;
@@ -47,19 +50,19 @@ p {
 }
 
 .main-icon {
-  font-size: 60px;
+  font-size: 40px;
   color: #347474;
-  vertical-align: middle;
+  vertical-align: top;
   padding-left: 10px;
 }
 
 .current-temperature {
-  vertical-align: middle;
-  padding: 20px 0 0 30px;
+  vertical-align: top;
+  padding: 0 0 0 30px;
 }
 
 .weather-info {
   text-align: right;
   font-size: 15px;
-  padding-top: 20px;
+  padding-top: 6px;
 }
