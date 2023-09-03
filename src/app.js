@@ -2,11 +2,11 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `${hours}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = `${minutes}`;
+    minutes = `0${minutes}`;
   }
   let days = [
     "Sunday",
@@ -22,6 +22,7 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
+  console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#description-weather").innerHTML =
     response.data.weather[0].main;
@@ -37,9 +38,15 @@ function showTemperature(response) {
   displayedTemperature.innerHTML = `${temperature}`;
   let dateElement = document.querySelector("#current-time");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
-let city = "Sheffield";
+let city = "Brazil";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
