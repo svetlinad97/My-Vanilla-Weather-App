@@ -45,7 +45,18 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
-let city = "Sheffield";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showTemperature);
+function search(city) {
+  let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#input-city");
+  search(cityInputElement.value);
+}
+
+search("Sheffield");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
