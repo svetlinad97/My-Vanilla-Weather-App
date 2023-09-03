@@ -22,7 +22,6 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#description-weather").innerHTML =
     response.data.weather[0].main;
@@ -47,6 +46,6 @@ function showTemperature(response) {
 }
 
 let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
-let city = "Brazil";
+let city = "Sheffield";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
