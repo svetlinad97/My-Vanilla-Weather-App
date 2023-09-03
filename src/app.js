@@ -40,5 +40,6 @@ function showTemperature(response) {
 }
 
 let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=sheffield&appid=${apiKey}&units=metric`;
+let city = "Sheffield";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
