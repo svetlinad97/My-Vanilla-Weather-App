@@ -18,7 +18,7 @@ h2 {
 h3 {
   color: #347474;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   margin: 20px 0;
 }
 
@@ -78,7 +78,7 @@ a {
 
 .weather-info {
   text-align: right;
-  font-size: 15px;
+  font-size: 18px;
   padding-top: 26px;
 }
 
@@ -90,4 +90,19 @@ a {
 .active:hover {
   color: black;
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin: 20px 20px 0;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  color: #347474;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 12px;
 }
