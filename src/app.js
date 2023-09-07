@@ -114,15 +114,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let displayedTemperature = document.querySelector("#current-temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  displayedTemperature.innerHTML = Math.round(fahrenheitTemperature);
-}
-
 function showCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
@@ -131,15 +122,7 @@ function showCelsiusTemperature(event) {
   displayedTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Sheffield");

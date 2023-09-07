@@ -53,8 +53,9 @@ a {
 
 .units {
   position: relative;
-  font-size: 12px;
-  top: -20px;
+  font-size: 14px;
+  top: -16px;
+  left: -5px;
 }
 .four-columns {
   margin-top: 20px;
